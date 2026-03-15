@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #fff;
+    font-size: 2.8em;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    background: linear-gradient(to right, #00f2fe, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rates-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.rate-card {
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.rate-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 45px 0 rgba(31, 38, 135, 0.5);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.rate-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.6em;
+    background: linear-gradient(to right, #00f2fe, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.price {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
+.change {
+    font-size: 1.2em;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 30px;
+    display: inline-block;
+}
+
+.change.positive {
+    background: linear-gradient(45deg, #00b09b, #96c93d);
+    color: white;
+}
+
+.change.negative {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+}
+
+.converter {
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    max-width: 600px;
+    margin: 0 auto 50px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.converter h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+    background: linear-gradient(to right, #00f2fe, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#convert-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input, select {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    font-size: 16px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #4facfe;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+select {
+    cursor: pointer;
+}
+
+select option {
+    background: #203a43;
+    color: white;
+}
+
+button {
+    padding: 15px;
+    background: linear-gradient(45deg, #00f2fe, #4facfe);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, #4facfe, #00f2fe);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#resultado {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+}
+
+#resultado.hidden {
+    display: none;
+}
+
+#valor-convertido {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 10px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-text {
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.github-link {
+    color: #fff;
+    font-size: 1.5em;
+    transition: all 0.3s ease;
+}
+
+.github-link:hover {
+    color: #4facfe;
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+    
+    .rates-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+    
+    .rate-card {
+        padding: 20px;
+    }
+    
+    .converter {
+        padding: 25px;
+        margin-bottom: 100px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .price {
+        font-size: 1.6em;
+    }
+} 

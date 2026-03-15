@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moedas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-exchange-alt"></i> Conversor de Moedas</h1>
+        
+        <div class="rates-container">
+            <div class="rate-card">
+                <h3><i class="fab fa-bitcoin"></i> Bitcoin</h3>
+                <p class="price" id="bitcoin-price">Carregando...</p>
+                <p class="change" id="bitcoin-change"></p>
+            </div>
+            <div class="rate-card">
+                <h3><i class="fas fa-coins"></i> Ouro</h3>
+                <p class="price" id="gold-price">Carregando...</p>
+                <p class="change" id="gold-change"></p>
+            </div>
+            <div class="rate-card">
+                <h3><i class="fas fa-dollar-sign"></i> Dólar</h3>
+                <p class="price" id="dolar-price">Carregando...</p>
+                <p class="change" id="dolar-change"></p>
+            </div>
+            <div class="rate-card">
+                <h3><i class="fas fa-euro-sign"></i> Euro</h3>
+                <p class="price" id="euro-price">Carregando...</p>
+                <p class="change" id="euro-change"></p>
+            </div>
+            <div class="rate-card">
+                <h3><i class="fas fa-pound-sign"></i> Libra</h3>
+                <p class="price" id="libra-price">Carregando...</p>
+                <p class="change" id="libra-change"></p>
+            </div>
+        </div>
+
+        <div class="converter">
+            <h2>Converter Valores</h2>
+            <form id="convert-form">
+                <input type="number" id="valor" placeholder="Valor em reais" required>
+                <select id="moeda" required aria-label="Selecione a moeda">
+                    <option value="bitcoin">Bitcoin</option>
+                    <option value="ouro">Ouro</option>
+                    <option value="dolar">Dólar</option>
+                    <option value="euro">Euro</option>
+                    <option value="libra">Libra</option>
+                </select>
+                <button type="submit">Converter</button>
+            </form>
+            <div id="resultado" class="hidden">
+                <p>Resultado da conversão:</p>
+                <p id="valor-convertido"></p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <span class="footer-text">Feito por gabrielcnb</span>
+            <a href="https://github.com/gabrielcnb" class="github-link" target="_blank" rel="noopener">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html> 
