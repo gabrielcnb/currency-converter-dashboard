@@ -1,83 +1,50 @@
-# currency-converter-dashboard
+# Currency Converter Dashboard
 
-Browser-based dashboard that displays live BRL exchange rates for USD, EUR, GBP, BTC, and gold, with a BRL-to-any conversion form.
+![JavaScript](https://img.shields.io/badge/JavaScript-ES2017+-F7DF1E?logo=javascript&logoColor=black)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-## Screenshot
+Browser-based dashboard that displays live BRL exchange rates for USD, EUR, GBP, BTC, and gold, with a real-time currency converter.
 
-![Dashboard UI](docs/screenshot.png)
-
-*No screenshot available yet. Place a screenshot at `docs/screenshot.png`.*
+No build step, no dependencies, no backend -- pure HTML, CSS, and vanilla JavaScript.
 
 ## Features
 
-- Live rate cards for Bitcoin, gold (XAU), US dollar, euro, and British pound — all quoted in BRL
-- Percentage change indicator per asset with positive/negative color coding
-- Auto-refresh every 30 seconds with client-side cache to avoid redundant API calls
+- Live rate cards for Bitcoin, gold (XAU), US dollar, euro, and British pound (all in BRL)
+- 24h percentage change indicator with positive/negative color coding
+- Auto-refresh every 30 seconds with client-side cache
 - BRL converter: enter any amount in reais and convert to any listed asset
-- Output precision: 8 decimal places for Bitcoin, grams for gold, 2 decimal places for fiat
-- Gold price fallback: if the XAU-BRL endpoint fails, calculates from USD/BRL rate using a USD/oz reference
-- No build step, no dependencies, no backend — pure HTML, CSS, and vanilla JavaScript
+- Output precision: 8 decimal places for BTC, grams for gold, 2 decimals for fiat
+- Gold price fallback: calculates from USD/BRL if XAU-BRL endpoint fails
+- Free API, no key required (AwesomeAPI)
 
 ## Stack
 
-| Component | Technology | Purpose |
-|---|---|---|
-| Markup | HTML5 | Page structure and rate cards |
-| Styling | CSS3 | Layout, card styles, change color coding |
-| Logic | Vanilla JavaScript (ES2017+) | API calls, rate caching, conversion, DOM updates |
-| Icons | Font Awesome 6 (CDN) | Asset icons in rate cards |
-| Rate data | AwesomeAPI (`economia.awesomeapi.com.br`) | Live FX, crypto, and gold rates — no API key required |
+| Component | Technology |
+|---|---|
+| Markup | HTML5 |
+| Styling | CSS3 |
+| Logic | Vanilla JavaScript |
+| Icons | Font Awesome 6 (CDN) |
+| Rate data | [AwesomeAPI](https://economia.awesomeapi.com.br) |
 
-## Setup / Installation
+## Getting Started
 
-No installation required. Open `index.html` directly in any modern browser:
+No installation required. Open `index.html` in any modern browser:
 
 ```bash
 git clone https://github.com/gabrielcnb/currency-converter-dashboard.git
 cd currency-converter-dashboard
-
-# Windows
 start index.html
-# macOS
-open index.html
-# Linux
-xdg-open index.html
 ```
 
-## Usage
+Rates load automatically and refresh every 30 seconds.
 
-**Viewing live rates:**
-Open `index.html`. Rate cards populate on load. Each card shows the current BRL bid price and the 24h percentage change. Rates refresh automatically every 30 seconds.
+### Usage
 
-**Converting a value:**
-1. Enter a BRL amount in the "Valor em reais" field.
-2. Select the target asset from the dropdown (Bitcoin, Ouro, Dólar, Euro, Libra).
-3. Click "Converter". The converted result appears below the form.
+1. Rate cards populate on page load with current BRL prices.
+2. Enter a BRL amount, select a target asset, and click "Converter".
+3. The converted value appears below the form.
 
-**API endpoints used:**
-```
-GET https://economia.awesomeapi.com.br/last/USD-BRL
-GET https://economia.awesomeapi.com.br/last/EUR-BRL
-GET https://economia.awesomeapi.com.br/last/GBP-BRL
-GET https://economia.awesomeapi.com.br/last/BTC-BRL
-GET https://economia.awesomeapi.com.br/last/XAU-BRL
-```
+## License
 
-**Rate caching:**
-Rates are cached in a module-level object (`ratesCache`) and only re-fetched when more than 30 seconds have elapsed since `lastUpdate`.
-
-## File Structure
-
-```
-currency-converter-dashboard/
-├── index.html   # Dashboard layout and rate card structure
-├── style.css    # Card styling, layout, positive/negative color states
-├── script.js    # API calls, caching, conversion logic, DOM updates
-└── README.md
-```
-
-## Known Limitations
-
-- All rates are BRL-denominated. Cross-currency conversion (e.g. USD to EUR) is not supported.
-- Gold price fallback uses a hardcoded USD/oz reference (65 USD) when the XAU-BRL endpoint is unavailable.
-- Requires an active internet connection. No offline mode.
+[MIT](LICENSE)
