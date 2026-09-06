@@ -169,7 +169,7 @@ button:active {
     transform: translateY(0);
 }
 
-#resultado {
+#result {
     margin-top: 30px;
     padding: 20px;
     background: rgba(255, 255, 255, 0.1);
@@ -178,11 +178,11 @@ button:active {
     border: 2px solid rgba(255, 255, 255, 0.18);
 }
 
-#resultado.hidden {
+#result.hidden {
     display: none;
 }
 
-#valor-convertido {
+#converted-amount {
     font-size: 1.8em;
     font-weight: bold;
     color: #fff;

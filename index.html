@@ -1,66 +1,66 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversor de Moedas</title>
+    <title>Currency Converter</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1><i class="fas fa-exchange-alt"></i> Conversor de Moedas</h1>
-        
+        <h1><i class="fas fa-exchange-alt"></i> Currency Converter</h1>
+
         <div class="rates-container">
             <div class="rate-card">
                 <h3><i class="fab fa-bitcoin"></i> Bitcoin</h3>
-                <p class="price" id="bitcoin-price">Carregando...</p>
+                <p class="price" id="bitcoin-price">Loading...</p>
                 <p class="change" id="bitcoin-change"></p>
             </div>
             <div class="rate-card">
-                <h3><i class="fas fa-coins"></i> Ouro</h3>
-                <p class="price" id="gold-price">Carregando...</p>
+                <h3><i class="fas fa-coins"></i> Gold</h3>
+                <p class="price" id="gold-price">Loading...</p>
                 <p class="change" id="gold-change"></p>
             </div>
             <div class="rate-card">
-                <h3><i class="fas fa-dollar-sign"></i> Dólar</h3>
-                <p class="price" id="dolar-price">Carregando...</p>
-                <p class="change" id="dolar-change"></p>
+                <h3><i class="fas fa-dollar-sign"></i> US Dollar</h3>
+                <p class="price" id="usd-price">Loading...</p>
+                <p class="change" id="usd-change"></p>
             </div>
             <div class="rate-card">
                 <h3><i class="fas fa-euro-sign"></i> Euro</h3>
-                <p class="price" id="euro-price">Carregando...</p>
-                <p class="change" id="euro-change"></p>
+                <p class="price" id="eur-price">Loading...</p>
+                <p class="change" id="eur-change"></p>
             </div>
             <div class="rate-card">
-                <h3><i class="fas fa-pound-sign"></i> Libra</h3>
-                <p class="price" id="libra-price">Carregando...</p>
-                <p class="change" id="libra-change"></p>
+                <h3><i class="fas fa-pound-sign"></i> British Pound</h3>
+                <p class="price" id="gbp-price">Loading...</p>
+                <p class="change" id="gbp-change"></p>
             </div>
         </div>
 
         <div class="converter">
-            <h2>Converter Valores</h2>
+            <h2>Convert</h2>
             <form id="convert-form">
-                <input type="number" id="valor" placeholder="Valor em reais" required>
-                <select id="moeda" required aria-label="Selecione a moeda">
+                <input type="number" id="amount" placeholder="Amount in BRL" required>
+                <select id="currency" required aria-label="Select a currency">
                     <option value="bitcoin">Bitcoin</option>
-                    <option value="ouro">Ouro</option>
-                    <option value="dolar">Dólar</option>
-                    <option value="euro">Euro</option>
-                    <option value="libra">Libra</option>
+                    <option value="gold">Gold</option>
+                    <option value="usd">US Dollar</option>
+                    <option value="eur">Euro</option>
+                    <option value="gbp">British Pound</option>
                 </select>
-                <button type="submit">Converter</button>
+                <button type="submit">Convert</button>
             </form>
-            <div id="resultado" class="hidden">
-                <p>Resultado da conversão:</p>
-                <p id="valor-convertido"></p>
+            <div id="result" class="hidden">
+                <p>Conversion result:</p>
+                <p id="converted-amount"></p>
             </div>
         </div>
     </div>
     <footer>
         <div class="footer-content">
-            <span class="footer-text">Feito por gabrielcnb</span>
+            <span class="footer-text">Built by gabrielcnb</span>
             <a href="https://github.com/gabrielcnb" class="github-link" target="_blank" rel="noopener">
                 <i class="fab fa-github"></i>
             </a>
@@ -68,4 +68,4 @@
     </footer>
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
