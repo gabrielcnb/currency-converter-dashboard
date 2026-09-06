@@ -1,11 +1,11 @@
-# Currency Converter Dashboard
+# Live Rates
+
+Browser-based dashboard that displays live BRL exchange rates for USD, EUR, GBP, BTC, and gold, with a real-time currency converter.
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES2017+-F7DF1E?logo=javascript&logoColor=black)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-Browser-based dashboard that displays live BRL exchange rates for USD, EUR, GBP, BTC, and gold, with a real-time currency converter.
-
-No build step, no dependencies, no backend -- pure HTML, CSS, and vanilla JavaScript.
+No build step, no dependencies, no backend: pure HTML, CSS, and vanilla JavaScript.
 
 ## Features
 
@@ -32,8 +32,8 @@ No build step, no dependencies, no backend -- pure HTML, CSS, and vanilla JavaSc
 No installation required. Open `index.html` in any modern browser:
 
 ```bash
-git clone https://github.com/gabrielcnb/currency-converter-dashboard.git
-cd currency-converter-dashboard
+git clone https://github.com/gabrielcnb/live-rates.git
+cd live-rates
 start index.html
 ```
 
